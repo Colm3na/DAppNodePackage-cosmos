@@ -65,6 +65,4 @@ RUN chmod +x /entrypoint.sh
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
 EXPOSE 26656 26657 9080
-ENTRYPOINT /entrypoint.sh 
-CMD /bin/bash
-
+ENTRYPOINT /entrypoint.sh && /bin/bash 
