@@ -6,14 +6,10 @@
   "type": "service",
   "image": {
     "path": "dappnodepackage-cosmos.public.dappnode.eth_0.0.1.tar.xz",
-    "hash": "/ipfs/QmfJT3RLmwhrXi7ZXtz2N4aLotjH1iPDUwdMte3DMB1bow",
-    "size": 267890437,
+    "hash": "/ipfs/QmPUpX7jCJDfQ6jXvcQuhPnAYWosGDAkg13cCfJnKfQfnJ",
+    "size": 271352700,
     "restart": "always"
   },
   "author": "La Colmena (https://github.com/Colm3na)",
-  "contributors": [
-    "DerFredy (https://github.com/derfredy)",
-    "Wimel (https://github.com/wimel)"
-  ],
   "license": "GLP-3.0"
 }
