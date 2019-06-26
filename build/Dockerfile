@@ -6,7 +6,7 @@
 FROM golang:alpine AS build-env
 
 # Set up dependencies
-ENV PACKAGES curl make git libc-dev bash gcc linux-headers eudev-dev python
+ENV PACKAGES ca-certificates curl make git libc-dev bash gcc linux-headers eudev-dev python
 
 # Set cosmos-sdk version
 ENV COSMOS_VERSION v0.34.7
@@ -15,7 +15,7 @@ ENV COSMOS_VERSION v0.34.7
 RUN apk add --no-cache $PACKAGES 
 
 # Set working directory for the build
-WORKDIR /go/src/github.com/cosmos
+WORKDIR /usr/src/app
 
 # Add source files from repo
 RUN git clone https://github.com/cosmos/cosmos-sdk.git && \
@@ -23,7 +23,7 @@ RUN git clone https://github.com/cosmos/cosmos-sdk.git && \
     git fetch --tags && \
     git checkout $COSMOS_VERSION
 
-WORKDIR /go/src/github.com/cosmos/cosmos-sdk
+WORKDIR /usr/src/app/cosmos-sdk
 RUN make tools && \
     make install
 
