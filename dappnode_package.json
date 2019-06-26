@@ -7,13 +7,13 @@
   "image": {
     "path": "",
     "hash": "",
-    "size": ,
+    "size": "",
     "restart": "always"
   },
   "author": "La Colmena (https://github.com/Colm3na)",
   "contributors": [
     "DerFredy (https://github.com/derfredy)",
     "Wimel (https://github.com/wimel)"
-  ],
+  ],  
   "license": "GLP-3.0"
 }
