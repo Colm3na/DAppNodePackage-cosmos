@@ -3,3 +3,7 @@ services:
   dappnodepackage-cosmos.public.dappnode.eth:
     image: 'dappnodepackage-cosmos.public.dappnode.eth:0.0.1'
     build: ./build
+    volumes:
+        - 'cosmos_data:/root/.gaiad'
+volumes:
+    cosmos_data: {}

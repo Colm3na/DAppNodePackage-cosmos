@@ -5,15 +5,15 @@
   "avatar": "/ipfs/Qmdj6YhkErGKB22hcLTe6WBvs3SunKREVUkkmDip18yLyX",
   "type": "service",
   "image": {
-    "path": "",
-    "hash": "",
-    "size": "",
+    "path": "dappnodepackage-cosmos.public.dappnode.eth_0.0.1.tar.xz",
+    "hash": "/ipfs/QmfJT3RLmwhrXi7ZXtz2N4aLotjH1iPDUwdMte3DMB1bow",
+    "size": 267890437,
     "restart": "always"
   },
   "author": "La Colmena (https://github.com/Colm3na)",
   "contributors": [
     "DerFredy (https://github.com/derfredy)",
     "Wimel (https://github.com/wimel)"
-  ],  
+  ],
   "license": "GLP-3.0"
 }

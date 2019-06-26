@@ -50,7 +50,7 @@ RUN git clone https://github.com/luniehq/lunie.git
 RUN cd lunie && yarn install && npm run build
 
 # We use a volume to ensure persistence of the ddbb
-VOLUME /root/.gaiad
+#VOLUME /root/.gaiad
 #RUN mkdir -p /root/.gaiad/config
 
 #  Copy startup scripts
@@ -65,5 +65,6 @@ RUN chmod +x /entrypoint.sh
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
 EXPOSE 26656 26657 9080
-ENTRYPOINT "/entrypoint.sh" && "/bin/bash"
+ENTRYPOINT /entrypoint.sh 
+CMD /bin/bash
 
