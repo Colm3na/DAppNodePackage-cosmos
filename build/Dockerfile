@@ -56,13 +56,13 @@ RUN cd lunie && yarn install && npm run build
 #  Copy startup scripts
 #  ###############################################################################
 WORKDIR /root
-COPY start_script.sh start_script.sh
+COPY start_script.sh /usr/bin/start_script.sh
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x start_script.sh
+RUN chmod +x /usr/bin/start_script.sh
 RUN chmod +x /entrypoint.sh
 
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
 EXPOSE 26656 26657 9080
-ENTRYPOINT /entrypoint.sh && /bin/bash 
+ENTRYPOINT start_script.sh && tail -f /dev/null
