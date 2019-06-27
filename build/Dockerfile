@@ -1,7 +1,7 @@
-# Simple usage
-# > docker build -t cosmos .
+# > Simple usage:
+# > docker-compose build
 # > Iniciamos el contenedor con:
-# ./start-container
+# > docker-compose up
 
 # Cosmos binaries image builder
 FROM golang:alpine AS cosmos-build
@@ -45,12 +45,11 @@ RUN cd lunie \
     && npm run build 
 
 ########## LAST STAGE #########
-
 FROM nginx:alpine
 
 COPY --from=lunie-build /usr/src/app/lunie/dist /usr/share/nginx/html
 
-# Copy over binaries from the build-env
+# Copy over binaries from the build
 COPY --from=cosmos-build /go/bin/gaiad /usr/bin/gaiad
 COPY --from=cosmos-build /go/bin/gaiacli /usr/bin/gaiacli
 
@@ -69,5 +68,5 @@ RUN chmod +x /entrypoint.sh
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656 26657 80
-ENTRYPOINT start_script.sh && tail -f /dev/null
+EXPOSE 26656 26657 80 443
+ENTRYPOINT start_script.sh 
