@@ -3,8 +3,7 @@
 # > Iniciamos el contenedor con:
 # ./start-container
 
-# Cosmos binaries image builder
-FROM golang:alpine AS cosmos-build
+FROM golang:alpine AS build-env
 
 # Set up dependencies
 ENV PACKAGES ca-certificates curl make git libc-dev bash gcc linux-headers eudev-dev python
@@ -28,38 +27,34 @@ WORKDIR /usr/src/app/cosmos-sdk
 RUN make tools && \
     make install
 
-# Lunie builder image
-FROM alpine:edge as lunie-build
+# Final image
+FROM alpine:edge
 
-# Install deps
+# Install ca-certificates
 RUN apk add --update ca-certificates bash git wget curl nodejs nodejs-npm yarn python make g++ tmux
 WORKDIR /usr/src/app
 
-# Clone Lunie repository
-RUN git clone https://github.com/luniehq/lunie.git
-
-# Build the Lunie APP
-RUN cd lunie \
-    && yarn install \
-    && npm install \
-    && npm run build 
-
-########## LAST STAGE #########
-
-FROM nginx:alpine
-
-COPY --from=lunie-build /usr/src/app/lunie/dist /usr/share/nginx/html
-
 # Copy over binaries from the build-env
-COPY --from=cosmos-build /go/bin/gaiad /usr/bin/gaiad
-COPY --from=cosmos-build /go/bin/gaiacli /usr/bin/gaiacli
+COPY --from=build-env /go/bin/gaiad /usr/bin/gaiad
+COPY --from=build-env /go/bin/gaiacli /usr/bin/gaiacli
 
 # Copy default config and genesis
 COPY config/config.toml /
 COPY config/genesis.json /
 
+# Copy Lunie repository
+#COPY lunie lunie
+RUN git clone https://github.com/luniehq/lunie.git
+
+# Build the Lunie APP
+RUN cd lunie && yarn install && npm run build
+
+# We use a volume to ensure persistence of the ddbb
+#VOLUME /root/.gaiad
+#RUN mkdir -p /root/.gaiad/config
+
 #  Copy startup scripts
-##############################################################################
+#  ###############################################################################
 WORKDIR /root
 COPY start_script.sh /usr/bin/start_script.sh
 COPY entrypoint.sh /entrypoint.sh
@@ -69,5 +64,5 @@ RUN chmod +x /entrypoint.sh
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656 26657 80
+EXPOSE 26656 26657 9080
 ENTRYPOINT start_script.sh && tail -f /dev/null
