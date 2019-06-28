@@ -47,6 +47,8 @@ RUN cd lunie \
 ########## LAST STAGE #########
 FROM nginx:alpine
 
+WORKDIR /usr/src/app
+
 COPY --from=lunie-build /usr/src/app/lunie/dist /usr/share/nginx/html
 
 # Copy over binaries from the build
@@ -54,19 +56,16 @@ COPY --from=cosmos-build /go/bin/gaiad /usr/bin/gaiad
 COPY --from=cosmos-build /go/bin/gaiacli /usr/bin/gaiacli
 
 # Copy default config and genesis
-COPY config/config.toml /
-COPY config/genesis.json /
+COPY config/config.toml /usr/src/app
+COPY config/genesis.json /usr/src/app
 
 #  Copy startup scripts
 ##############################################################################
-WORKDIR /root
 COPY start_script.sh /usr/bin/start_script.sh
-COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /usr/bin/start_script.sh
-RUN chmod +x /entrypoint.sh
 
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656 26657 80 443
+EXPOSE 26656
 ENTRYPOINT start_script.sh 

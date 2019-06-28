@@ -1,15 +1,34 @@
 {
-  "name": "dappnodepackage-cosmos.public.dappnode.eth",
+  "name": "cosmos.public.dappnode.eth",
   "version": "0.0.1",
   "description": "Cosmos Network fullnode and Lunie web Wallet",
   "avatar": "/ipfs/Qmdj6YhkErGKB22hcLTe6WBvs3SunKREVUkkmDip18yLyX",
   "type": "service",
   "image": {
-    "path": "dappnodepackage-cosmos.public.dappnode.eth_0.0.1.tar.xz",
-    "hash": "/ipfs/QmNPj4tj8tt8xGqXahrGXrWXnBFqiatv2tFAkhkSENrcrk",
-    "size": 28620318,
-    "restart": "always"
+    "path": "cosmos.public.dappnode.eth_0.0.1.tar.xz",
+    "hash": "/ipfs/QmR9U1CLeTvXysgRQv9huYFtwTKASnKi6zsiw5oxyN1tD8",
+    "size": 28616122,
+    "restart": "always",
+    "volumes": [
+      "cosmos:/root/.gaiad"
+    ],
+    "ports": [
+      "26656"
+    ]
+  },
+  "disclaimer": {
+    "message": "This software is experimental, presented 'as is' and inherently carries risks. By installing it, you acknowledge that DAppNode Association has done its best to mitigate these risks and accept to waive any liability or responsibility for DAppNode in case of any shortage, discrepancy, damage, loss or destruction of any digital asset managed within this DAppNode package.\n\nThis package stores private keys, which will be stored in your DAppNode. Neither DAppNode Association nor the developers of this software can have access to your private key, nor help you recover it if you lose it. \n\nYou are solely responsible for keeping your private keys and password safe and to perform secure backups, as well as to restrict access to your computer and other equipment. To the extent permitted by applicable law, you agree to be responsible for all activities that have been conducted from your account. You must take all necessary steps to ensure that your private key, password, and recovery phrase remain confidential and secured."
   },
   "author": "La Colmena (https://github.com/Colm3na)",
-  "license": "GLP-3.0"
+  "links": {
+    "WebUI": "http://cosmos.public.dappnode"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Colm3na/DAppNodePackage-cosmos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Colm3na/DAppNodePackage-cosmos/issues"
+  },
+  "license": "GPL-3.0"
 }
