@@ -16,7 +16,7 @@ With this package you can have your own Cosmos full node and host your own clone
 
 > The build process of the package is based on [dappnode-sdk](https://github.com/dappnode/DAppNodeSDK)
 
-Latest version of the package maintained by [La Colmena](https://github.com/Colm3na)
+> Latest version of the package maintained by [La Colmena](https://github.com/Colm3na)
 
 <h1 align="center"> You can install it in your DAppnode with: </h1>
 
