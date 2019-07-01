@@ -43,8 +43,7 @@ RUN cd lunie \
     && sed -i '/"connect-src"/a \          `http://cosmos.public.dappnode`, \n \         `ws://cosmos.public.dappnode:26657`,' webpack.config.js \
     && yarn install \
     && npm install \
-    && RPC="http://cosmos.public.dappnode:26657" yarn build:ui
-    # && STARGATE="http://cosmos.public.dappnode" RPC="http://cosmos.public.dappnode:26657" yarn build:ui
+    && STARGATE="http://cosmos.public.dappnode" RPC="http://cosmos.public.dappnode:26657" yarn build:ui
 
 ########## LAST STAGE #########
 FROM nginx:alpine
