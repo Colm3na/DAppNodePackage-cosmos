@@ -32,17 +32,19 @@ RUN make tools && \
 FROM alpine:edge as lunie-build
 
 # Install deps
-RUN apk add --update ca-certificates bash git wget curl nodejs nodejs-npm yarn python make g++ tmux
+RUN apk add --no-cache ca-certificates bash git wget curl nodejs nodejs-npm yarn python make g++ tmux
 WORKDIR /usr/src/app
 
 # Clone Lunie repository
-RUN git clone https://github.com/luniehq/lunie.git
+RUN git clone --branch master https://github.com/luniehq/lunie.git 
 
 # Build the Lunie APP
 RUN cd lunie \
+    && sed -i '/"connect-src"/a \          `http://cosmos.public.dappnode`, \n \         `ws://cosmos.public.dappnode:26657`,' webpack.config.js \
     && yarn install \
     && npm install \
-    && npm run build 
+    && RPC="http://cosmos.public.dappnode:26657" yarn build:ui
+    # && STARGATE="http://cosmos.public.dappnode" RPC="http://cosmos.public.dappnode:26657" yarn build:ui
 
 ########## LAST STAGE #########
 FROM nginx:alpine
@@ -67,5 +69,5 @@ RUN chmod +x /usr/bin/start_script.sh
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656
+EXPOSE 26656 26657
 ENTRYPOINT start_script.sh 
