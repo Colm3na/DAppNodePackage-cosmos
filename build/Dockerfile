@@ -46,11 +46,19 @@ RUN cd lunie \
     && STARGATE="http://cosmos.public.dappnode" RPC="http://cosmos.public.dappnode:26657" yarn build:ui
 
 ########## LAST STAGE #########
-FROM nginx:alpine
+#FROM nginx:alpine
+FROM swaggerapi/swagger-ui
+
+ENV EXTRA_PKG curl jq bash vim
+
+ENV BASE_URL=/rpc
+ENV SWAGGER_JSON=/usr/src/app/swagger.json
+
+RUN apk add --no-cache $EXTRA_PKG
 
 WORKDIR /usr/src/app
 
-COPY --from=lunie-build /usr/src/app/lunie/dist /usr/share/nginx/html
+#COPY --from=lunie-build /usr/src/app/lunie/dist /usr/share/nginx/html
 
 # Copy over binaries from the build
 COPY --from=cosmos-build /go/bin/gaiad /usr/bin/gaiad
@@ -59,6 +67,7 @@ COPY --from=cosmos-build /go/bin/gaiacli /usr/bin/gaiacli
 # Copy default config and genesis
 COPY config/config.toml /usr/src/app
 COPY config/genesis.json /usr/src/app
+COPY config/cosmos-swagger.json /usr/src/app
 
 #  Copy startup scripts
 ##############################################################################
@@ -68,5 +77,5 @@ RUN chmod +x /usr/bin/start_script.sh
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656 26657
+EXPOSE 26656 26657 1317 8080
 ENTRYPOINT start_script.sh 
