@@ -70,6 +70,7 @@ COPY --from=cosmos-build /go/bin/gaiacli /usr/bin/gaiacli
 COPY config/config.toml /usr/src/app
 COPY config/genesis.json /usr/src/app
 COPY config/swagger.json /usr/share/nginx/html/
+COPY config/nginx.conf /etc/nginx/
 
 #  Copy startup scripts
 ##############################################################################
