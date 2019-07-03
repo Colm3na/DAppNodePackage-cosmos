@@ -6,8 +6,8 @@
   "type": "service",
   "image": {
     "path": "cosmos.public.dappnode.eth_0.0.2.tar.xz",
-    "hash": "/ipfs/QmXp2W6bSWLFPCiQHBxC1ctKWhqQbwqBJ1BB6AcLxog15g",
-    "size": 36247860,
+    "hash": "/ipfs/QmXXbbQFLpqTwa1Nc6PjxbcncfNUNnhdrzPSNF3pVE6Z1r",
+    "size": 42884958,
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
@@ -16,8 +16,7 @@
       "26656:26656",
       "26657:26657",
       "1317:1317",
-      "8080:8080",
-      "80:80"
+      "80:8080"
     ],
     "keywords": [
       "DAppNode",

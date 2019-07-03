@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "3.0",
-    "title": "Gaia-Lite for Cosmos",
+    "title": "DAppNode API for Cosmos",
     "description": "A REST interface for state queries, transaction generation and broadcasting."
   },
   "tags": [
@@ -36,9 +36,10 @@
     }
   ],
   "schemes": [
-    "https"
+    "https",
+    "http"
   ],
-  "host": "stargate.cosmos.network",
+  "host": "cosmos.public.dappnode",
   "securityDefinitions": {
     "kms": {
       "type": "basic"
