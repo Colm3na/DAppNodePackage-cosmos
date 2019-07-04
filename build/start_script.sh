@@ -15,11 +15,6 @@ fi
 
 nginx > /dev/null 2>&1 & 
 
-gaiad start 
+/bin/sh /usr/bin/start_rest.sh > /dev/null 2>&1 &
 
-# sleep 30 && \
-#gaiacli rest-server --chain-id=cosmoshub-2 \
-#    --laddr=tcp://localhost:1317 \
-#    --node tcp://localhost:26657 \
-#    --trust-node=false
-# gaiacli rest-server --trust-node --cors * --laddr tcp://0.0.0.0:1317 &
+gaiad start

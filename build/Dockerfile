@@ -76,10 +76,11 @@ COPY config/nginx.conf /etc/nginx/
 #  Copy startup scripts
 ##############################################################################
 COPY start_script.sh /usr/bin/start_script.sh
+COPY start_rest.sh /usr/bin/start_rest.sh
 RUN chmod +x /usr/bin/start_script.sh
 
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656 26657 1317 80
+EXPOSE 26656 26657 1317 80 8080
 ENTRYPOINT start_script.sh
