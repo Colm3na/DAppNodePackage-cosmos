@@ -33,6 +33,7 @@
   ],
   "links": {
     "WebUI": "http://cosmos.public.dappnode/lunie"
+    "Cosmos RPC": "http://cosmos.public.dappnode/rpc"
   },
   "repository": {
     "type": "git",
