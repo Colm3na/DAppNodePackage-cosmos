@@ -40,10 +40,10 @@ RUN git clone --branch master https://github.com/luniehq/lunie.git
 
 # Build the Lunie APP
 RUN cd lunie \
-    && sed -i '/"connect-src"/a \          `http://cosmos.public.dappnode:1317`, \n \         `ws://cosmos.public.dappnode:26657`,' webpack.config.js \
+    && sed -i '/"connect-src"/a \          `http://cosmos.public.dappnode`, \n \         `ws://cosmos.public.dappnode:26657`,' webpack.config.js \
     && yarn install \
     && npm install \
-    && STARGATE="http://cosmos.public.dappnode:1317" RPC="http://cosmos.public.dappnode:26657" yarn build:ui
+    && STARGATE="http://cosmos.public.dappnode" RPC="http://cosmos.public.dappnode:26657" yarn build:ui
 
 ########## LAST STAGE #########
 #FROM nginx:alpine
