@@ -60,6 +60,7 @@ RUN apk add --no-cache $EXTRA_PKG
 WORKDIR /usr/src/app
 
 RUN mkdir /usr/share/nginx/html/lunie
+RUN mkdir /usr/share/nginx/html/rpc
 COPY --from=lunie-build /usr/src/app/lunie/dist /usr/share/nginx/html/lunie
 
 # Copy over binaries from the build
@@ -69,7 +70,7 @@ COPY --from=cosmos-build /go/bin/gaiacli /usr/bin/gaiacli
 # Copy default config and genesis
 COPY config/config.toml /usr/src/app
 COPY config/genesis.json /usr/src/app
-COPY config/swagger.json /usr/share/nginx/html/
+COPY config/swagger.json /usr/share/nginx/html/rpc/
 COPY config/index.html /usr/share/nginx/html/
 COPY config/nginx.conf /etc/nginx/
 
@@ -82,5 +83,5 @@ RUN chmod +x /usr/bin/start_script.sh
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656 26657 1317 80 8080
+EXPOSE 26656 26657 1317 80 
 ENTRYPOINT start_script.sh
