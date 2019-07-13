@@ -6,8 +6,8 @@
   "type": "service",
   "image": {
     "path": "cosmos.public.dappnode.eth_0.0.2.tar.xz",
-    "hash": "/ipfs/QmTactZtwJ1o97khTHk8Eoj8jcnkNmUFwB7vY7r7MFZFsj",
-    "size": 42841290,
+    "hash": "/ipfs/QmYLhzw2bQ69JQxLdDWgS4UaGwokFpY6mqg7YS6mQGqub8",
+    "size": 42586584,
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
@@ -35,7 +35,8 @@
   ],
   "links": {
     "WebUI": "https://cosmos.public.dappnode/lunie",
-    "Cosmos RPC": "https://cosmos.public.dappnode/rpc"
+    "RPC": "https://cosmos.public.dappnode/rpc",
+    "Rest": "https://cosmos.public.dappnode/rest"
   },
   "repository": {
     "type": "git",

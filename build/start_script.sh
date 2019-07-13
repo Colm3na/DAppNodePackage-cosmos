@@ -14,6 +14,7 @@ then
 fi
 
 cp /usr/src/app/*.pem /etc/nginx/certs
+cp /usr/src/app/*.pem /root/.gaiad/config
 
 nginx > /dev/null 2>&1 & 
 
