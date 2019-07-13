@@ -6,8 +6,8 @@
   "type": "service",
   "image": {
     "path": "cosmos.public.dappnode.eth_0.0.2.tar.xz",
-    "hash": "/ipfs/QmYLWzmYxhrD7V1yyJRTomVkvvpi1Vzyn6Vq1LH65QkuaY",
-    "size": 47540861,
+    "hash": "/ipfs/QmTactZtwJ1o97khTHk8Eoj8jcnkNmUFwB7vY7r7MFZFsj",
+    "size": 42841290,
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
@@ -16,6 +16,8 @@
       "26656:26656",
       "26657:26657",
       "1317:1317",
+      "443:443",
+      "8080:8080",
       "80:80"
     ],
     "keywords": [
@@ -32,8 +34,8 @@
     "Wimel (https://github.com/wimel)"
   ],
   "links": {
-    "WebUI": "http://cosmos.public.dappnode/lunie",
-    "Cosmos RPC": "http://cosmos.public.dappnode/rpc"
+    "WebUI": "https://cosmos.public.dappnode/lunie",
+    "Cosmos RPC": "https://cosmos.public.dappnode/rpc"
   },
   "repository": {
     "type": "git",

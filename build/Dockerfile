@@ -40,10 +40,10 @@ RUN git clone --branch master https://github.com/luniehq/lunie.git
 
 # Build the Lunie APP
 RUN cd lunie \
-    && sed -i '/"connect-src"/a \          `http://cosmos.public.dappnode`, \n \         `ws://cosmos.public.dappnode:26657`,' webpack.config.js \
+    && sed -i '/"connect-src"/a \          `https://cosmos.public.dappnode`, \n \         `https://cosmos.public.dappnode:8080`, \n \         `wss://cosmos.public.dappnode:8080/websocket`, \n \         `wss://cosmos.public.dappnode:8080`,' webpack.config.js \
     && yarn install \
     && npm install \
-    && STARGATE="http://cosmos.public.dappnode" RPC="http://cosmos.public.dappnode:26657" yarn build:ui
+    && STARGATE="https://cosmos.public.dappnode" RPC="https://cosmos.public.dappnode:8080" yarn build:ui
 
 ########## LAST STAGE #########
 #FROM nginx:alpine
@@ -53,13 +53,15 @@ ENV EXTRA_PKG curl jq bash vim
 
 ENV BASE_URL ""
 ENV SWAGGER_JSON "/usr/share/nginx/html/swagger.json"
-ENV PORT 80
+ENV PORT 443
 
 RUN apk add --no-cache $EXTRA_PKG
 
 WORKDIR /usr/src/app
 
-RUN mkdir /usr/share/nginx/html/lunie
+RUN mkdir /usr/share/nginx/html/liunie && \
+  mkdir /etc/nginx/certs
+
 COPY --from=lunie-build /usr/src/app/lunie/dist /usr/share/nginx/html/lunie
 
 # Copy over binaries from the build
@@ -72,6 +74,8 @@ COPY config/genesis.json /usr/src/app
 COPY config/swagger.json /usr/share/nginx/html/
 COPY config/index.html /usr/share/nginx/html/
 COPY config/nginx.conf /etc/nginx/
+COPY config/key.pem /usr/src/app
+COPY config/cert.pem /usr/src/app
 
 #  Copy startup scripts
 ##############################################################################
@@ -82,5 +86,5 @@ RUN chmod +x /usr/bin/start_script.sh
 #  Start
 ###############################################################################
 # Run gaiad by default, omit entrypoint to ease using container with gaiacli
-EXPOSE 26656 26657 1317 80 
+EXPOSE 26656 26657 1317 8080 80 443
 ENTRYPOINT start_script.sh
