@@ -10,7 +10,7 @@ FROM golang:alpine AS cosmos-build
 ENV PACKAGES ca-certificates curl make git libc-dev bash gcc linux-headers eudev-dev python
 
 # Set cosmos-sdk version
-ENV COSMOS_VERSION v0.35.0
+ENV COSMOS_VERSION v0.34.7
 
 # Install minimum necessary dependencies, build Cosmos SDK, remove packages
 RUN apk add --no-cache $PACKAGES 
