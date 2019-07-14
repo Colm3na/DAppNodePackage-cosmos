@@ -6,8 +6,8 @@
   "type": "service",
   "image": {
     "path": "cosmos.public.dappnode.eth_0.0.2.tar.xz",
-    "hash": "/ipfs/QmbA52d15cEbrd4H1YQf4q7QRPK8XW2wxy8jLaxrVMJ4bB",
-    "size": 42598780,
+    "hash": "/ipfs/QmQeRoavJPfo5w1RXnDZZVqoAu1krFxWWptjMGSdogie2A",
+    "size": 42833146,
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
@@ -20,6 +20,8 @@
     ],
     "keywords": [
       "DAppNode",
+      "Wallet",
+      "Luinie",
       "Cosmos"
     ]
   },
