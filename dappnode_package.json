@@ -2,21 +2,18 @@
   "name": "cosmos.public.dappnode.eth",
   "version": "0.0.3",
   "description": "Cosmos Network fullnode and Lunie web Wallet.",
-  "avatar": "/ipfs/Qmdj6YhkErGKB22hcLTe6WBvs3SunKREVUkkmDip18yLyX",
+  "avatar": "/ipfs/QmT1BjXYwmLh9FmeT8DUywWhx2aDctMCZLLPcWqXLz5vc5",
   "type": "service",
   "image": {
-    "path": "",
-    "hash": "",
-    "size": "",
+    "path": "cosmos.public.dappnode.eth_0.0.3.tar.xz",
+    "hash": "/ipfs/QmRwy5b4qdsW9N5j4aATr144r3Cp45TZJXWCpeb7mpPDiw",
+    "size": 42591812,
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
     ],
     "ports": [
-      "26656:26656",
-      "26657:26657",
-      "1317:1317",
-      "443:443"
+      "26656:26656"
     ],
     "keywords": [
       "DAppNode",
