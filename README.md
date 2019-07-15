@@ -25,8 +25,7 @@ With this package you can have your own Cosmos full node and host your own clone
 <h2 align="center"> IPFS hash: </h2>
 </sumary>
 <details>
-
-/ipfs/QmVn1CcPknVMkGCygqrhfZbVryEWbATK642QGAhA1yem96
+/ipfs/QmdqdkPRmGSmJXBfwwrmk2fJTDoGJwzPPtfd39kp19GF6v
 </details>
   
 <sumary>
@@ -42,5 +41,5 @@ http://my.dappnode/#/installer/cosmos.public.dappnode.eth
 </sumary>
 
 <details>
-http://my.dappnode/#/system/add-ipfs-peer/%2Fdns4%2F06f904705c1cde31.dyndns.dappnode.io%2Ftcp%2F4001%2Fipfs%2FQmXsjTjremScjs1aPY4yda43NsEEwDSrnaU92ZDinCmVSB
+http://my.dappnode/#/system/add-ipfs-peer/%2Fdns4%2F06f904705c1cde31.dyndns.dappnode.io%2Ftcp%2F4001%2Fipfs%2FQme3qzA1X2q1agL7rpmej6dS5ygGyyL9obeZ8mCD6KkPQt
 </details>
