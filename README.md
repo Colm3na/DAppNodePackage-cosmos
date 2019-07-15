@@ -1,7 +1,7 @@
 # DAppNodePackage-cosmos 
 
 <p align="center"> 
-<img src="cosmos-avatar.jpg">
+<img src="cosmos-avatar.png">
 </p>
 
 <h1 align="center"> <a href="https://github.com/cosmos/gaia/blob/master/docs/join-mainnet.md">Cosmos Network fullnode</a> and <a href="https://github.com/luniehq/lunie">Lunie web Wallet </a> for DAppNode </h1>
