@@ -9,8 +9,7 @@
 <h1 align="center"> <a href="https://github.com/cosmos/gaia/blob/master/docs/join-mainnet.md">Cosmos Network fullnode</a> and <a href="https://github.com/luniehq/lunie">Lunie web Wallet </a> for DAppNode </h1>
 
 [DAppNode](https://github.com/dappnode/DAppNode) is a web application and also the name of the [hardware](https://shop.dappnode.io) of an amazing project.
-Its goal is to make it extremely easy to install and run blockchain applications and
-full nodes.
+Its goal is to make it extremely easy to install and run blockchain applications, full nodes and help to decentralice the nodes.
 
 What we have develop here is the DAppNode package that inclues a complete Cosmos Full Node
 and its official web wallet, Lunie.
