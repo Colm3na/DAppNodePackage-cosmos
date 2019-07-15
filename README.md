@@ -60,3 +60,7 @@ Please read [CONTRIBUTING.md](https://github.com/dappnode/DAppNode/blob/master/C
 - **Fredy** - [DerFredy](https://github.com/derfredy)
 
 - **Wimel** - [wimel](https://github.com/wimel)
+
+# License 
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
