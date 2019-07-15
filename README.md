@@ -60,7 +60,7 @@ With these instructions you can install a Cosmos node in DAppNode and use [Lunie
 ### Prerequisites
 
 <sumary>
-- If you are using Linux you need to follow these steps for the communication of the computer with the Ledger (described on the <a href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues"> Ledger website.</a>)
+- If you are using Linux you need to follow these steps for the connection issues(described on the <a href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues"> Ledger website.</a>)
 </sumary>
 <details>
 <h3>1. Setup</h3>
@@ -96,6 +96,13 @@ and search for a <strong>plugdev</strong> occurrence. If it's not there, you've 
 </ol>
 </details>
 
+- You need your own [DAppNode](https://github.com/dappnode/DAppNode).
+
+- In your DAppNode install the package with:
+
+```
+http://my.dappnode/#/installer/cosmos.public.dappnode.eth
+```
 
 ## Contributing
 
