@@ -19,7 +19,11 @@ With this package you can have your own Cosmos full node and host your own clone
 
 > The build process of the package is based on [dappnode-sdk](https://github.com/dappnode/DAppNodeSDK)
 
-> Latest version of the package (v0.0.3) maintained by [La Colmena](https://github.com/Colm3na)
+> Latest version of the package (**v0.0.3**) maintained by [La ColmenaSvQ](https://github.com/Colm3na)
+
+> [Manifest.](dappnode_package.json)
+
+
 
 <h1 align="center"> You can install it in your DAppnode with: </h1>
 
@@ -46,3 +50,13 @@ http://my.dappnode/#/installer/cosmos.public.dappnode.eth
 <details>
 http://my.dappnode/#/system/add-ipfs-peer/%2Fdns4%2F06f904705c1cde31.dyndns.dappnode.io%2Ftcp%2F4001%2Fipfs%2FQme3qzA1X2q1agL7rpmej6dS5ygGyyL9obeZ8mCD6KkPQt
 </details>
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/dappnode/DAppNode/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
+
+- **Fredy** - [DerFredy](https://github.com/derfredy)
+
+- **Wimel** - [wimel](https://github.com/wimel)
