@@ -6,7 +6,7 @@
 
 [![RIOT DAppNode](https://img.shields.io/badge/RIOT-DAppNode-blue.svg)](https://riot.dappnode.io)
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.dappnode.io)
+[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.com/dappnode)
 
 
 <h1 align="center"> <a href="https://github.com/cosmos/gaia/blob/master/docs/join-mainnet.md">Cosmos Network fullnode</a> and <a href="https://github.com/luniehq/lunie">Lunie web Wallet </a> for DAppNode </h1>
