@@ -100,6 +100,17 @@ and search for a <strong>plugdev</strong> occurrence. If it's not there, you've 
 http://my.dappnode/#/installer/cosmos.public.dappnode.eth
 ```
 
+- Then you can go to the URL of your node, which would be something like this:
+
+```
+https://cosmos.public.dappnode/lunie
+```
+
+- By placing the mouse at the bottom right above `Cosmoshub-2` you can see that you are connected to your own Cosmos node.
+> You're connected to cosmoshub-2 via https://cosmos.public.dappnode
+
+> The first time we access the URL, warns us of the certificate, to be self-signed warns us of it as an error, we must accept it
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/dappnode/DAppNode/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
