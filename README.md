@@ -1,8 +1,11 @@
 # DAppNodePackage-cosmos 
 
-<p align="center"> 
-<img src="cosmos-avatar.png">
-</p>
+[![Website dappnode.io](https://img.shields.io/badge/Website-dappnode.io-brightgreen.svg)](https://dappnode.io/)
+[![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)]
+[![Documentation Wiki](https://img.shields.io/badge/Documentation-Wiki-brightgreen.svg)](https://docs.dappnode.io)
+[![RIOT DAppNode](https://img.shields.io/badge/RIOT-DAppNode-blue.svg)](https://riot.dappnode.io)
+[![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.dappnode.io)
+
 
 <h1 align="center"> <a href="https://github.com/cosmos/gaia/blob/master/docs/join-mainnet.md">Cosmos Network fullnode</a> and <a href="https://github.com/luniehq/lunie">Lunie web Wallet </a> for DAppNode </h1>
 
@@ -16,7 +19,7 @@ With this package you can have your own Cosmos full node and host your own clone
 
 > The build process of the package is based on [dappnode-sdk](https://github.com/dappnode/DAppNodeSDK)
 
-> Latest version of the package maintained by [La Colmena](https://github.com/Colm3na)
+> Latest version of the package (v0.0.3) maintained by [La Colmena](https://github.com/Colm3na)
 
 <h1 align="center"> You can install it in your DAppnode with: </h1>
 
@@ -37,7 +40,7 @@ http://my.dappnode/#/installer/cosmos.public.dappnode.eth
 </details>
 
 <sumary>
-<h2 align="center"> If you need a peer for IPFS you can add the node of Colmena (in DAppNode): </h2>
+<h2 align="center"> If you need a peer for IPFS you can add the node of Colm3na (in your DAppNode): </h2>
 </sumary>
 
 <details>
