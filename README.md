@@ -38,9 +38,9 @@ http://my.dappnode/#/installer/cosmos.public.dappnode.eth
 </details>
 
 <sumary>
-<h2 align="center"> If you need a peer for IPFS you can add the node of Colmena with (in DAppNode): </h2>
+<h2 align="center"> If you need a peer for IPFS you can add the node of Colmena (in DAppNode): </h2>
 </sumary>
 
 <details>
-http://my.dappnode/#/system/add-ipfs-peer/%2Fdns4%2F9de8271ce01118b9.dyndns.dappnode.io%2Ftcp%2F4001%2Fipfs%2FQmap4zbHNm7qECDaaRQHyrYa7vvyrpEBJsoJpyKW3MBb3G
+http://my.dappnode/#/system/add-ipfs-peer/%2Fdns4%2F06f904705c1cde31.dyndns.dappnode.io%2Ftcp%2F4001%2Fipfs%2FQmXsjTjremScjs1aPY4yda43NsEEwDSrnaU92ZDinCmVSB
 </details>
