@@ -1,9 +1,11 @@
-# DAppNodePackage-cosmos 
+# DAppNodePackage-Cosmos 
 
 [![Website dappnode.io](https://img.shields.io/badge/Website-dappnode.io-brightgreen.svg)](https://dappnode.io/)
-[![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)]
+
 [![Documentation Wiki](https://img.shields.io/badge/Documentation-Wiki-brightgreen.svg)](https://docs.dappnode.io)
+
 [![RIOT DAppNode](https://img.shields.io/badge/RIOT-DAppNode-blue.svg)](https://riot.dappnode.io)
+
 [![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.dappnode.io)
 
 
@@ -51,6 +53,50 @@ http://my.dappnode/#/installer/cosmos.public.dappnode.eth
 http://my.dappnode/#/system/add-ipfs-peer/%2Fdns4%2F06f904705c1cde31.dyndns.dappnode.io%2Ftcp%2F4001%2Fipfs%2FQme3qzA1X2q1agL7rpmej6dS5ygGyyL9obeZ8mCD6KkPQt
 </details>
 
+## Getting Started
+
+With these instructions you can install a Cosmos node in DAppNode and use [Lunie](https://github.com/luniehq/lunie) with [Ledger.](https://www.ledger.com)
+
+### Prerequisites
+
+<sumary>
+- If you are using Linux you need to follow these steps for the communication of the computer with the Ledger (described on the <a href="https://support.ledger.com/hc/en-us/articles/115005165269-Fix-connection-issues"> Ledger website.</a>)
+</sumary>
+<details>
+<h3>1. Setup</h3>
+<ul>
+<li>Check if the plugdev group exists by entering the command:<br />
+<pre><code>cat /etc/group | grep plugdev</code></pre>
+</li>
+<li><strong>Follow the steps below </strong><strong>if the previous command did not return </strong><strong>a result</strong>
+<ol>
+<li><strong>C</strong>reate the <strong>plugdev</strong> group:<br />
+<pre><code>sudo groupadd plugdev</code></pre>
+</li>
+<li>Check if you are in the group <strong>plugdev</strong> with the command:
+<pre><code>groups</code></pre>
+</li>
+<li>
+<p>If the output does not contain <strong>plugdev</strong>, you are not in the <strong>plugdev </strong>group. Enter the command:</p>
+<pre><code>sudo gpasswd -a &lt;user&gt; plugdev</code></pre>
+<p><strong>Note</strong>: replace &lt;user&gt; by your username, e.g for user "mike", it would be: <strong>sudo gpasswd -a mike plugdev</strong>.</p>
+</li>
+<li>
+<p>Logout and login for the change to take effect. To verify you are now in the <strong>plugdev</strong> group, enter:</p>
+<pre><code>groups</code></pre>
+and search for a <strong>plugdev</strong> occurrence. If it's not there, you've missed a step and should restart from step 1.</li>
+</ol>
+</li>
+</ul>
+<h3>2. Add the udev rules</h3>
+<ol>
+<li>Enter the following command to automatically add the rules and reload udev:
+<pre><code>wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash</code></pre>
+</li>
+</ol>
+</details>
+
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/dappnode/DAppNode/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
@@ -61,6 +107,6 @@ Please read [CONTRIBUTING.md](https://github.com/dappnode/DAppNode/blob/master/C
 
 - **Wimel** - [wimel](https://github.com/wimel)
 
-# License 
+## License 
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
