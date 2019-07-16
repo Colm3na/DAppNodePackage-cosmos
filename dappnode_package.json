@@ -30,6 +30,9 @@
     "DerFredy (https://github.com/derfredy)",
     "Wimel (https://github.com/wimel)"
   ],
+  "categories": [
+    "Blockchain"
+  ],
   "links": {
     "WebUI": "https://cosmos.public.dappnode/lunie",
     "Rest": "https://cosmos.public.dappnode/rest",
