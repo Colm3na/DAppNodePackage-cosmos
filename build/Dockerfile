@@ -46,10 +46,11 @@ RUN PASSWORD=$(echo $(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | h
 FROM alpine:edge as lunie-build
 
 # Install deps
-RUN apk add --no-cache ca-certificates bash git wget curl nodejs nodejs-npm yarn python make g++ tmux openssl
+RUN apk add --no-cache ca-certificates bash git nodejs nodejs-npm yarn python make g++ openssl
 WORKDIR /usr/src/app
 
 ENV LUNIE_VERSION v1.0.0-beta.96
+
 # Clone Lunie repository
 RUN git clone --branch ${LUNIE_VERSION} https://github.com/luniehq/lunie.git 
 
@@ -85,6 +86,7 @@ COPY --from=cosmos-build /go/bin/gaiad /go/bin/gaiacli /usr/bin/
 COPY --from=certificates /opt/ssl/server.key /opt/ssl/server.crt /etc/nginx/certs/
 
 RUN mkdir -p /root/.gaiad/config
+
 # Copy default config and genesis
 COPY config/config.toml config/genesis.json /root/.gaiad/config/
 COPY config/swagger.json config/index.html /usr/share/nginx/html/
