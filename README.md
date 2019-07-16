@@ -30,7 +30,7 @@ With this package you can have your own Cosmos full node and host your own clone
 <h2 align="center"> IPFS hash: </h2>
 </sumary>
 <details>
-/ipfs/QmdqdkPRmGSmJXBfwwrmk2fJTDoGJwzPPtfd39kp19GF6v
+/ipfs/QmQetWYatxuuJCBA8MAVxnEc6AQW9XFza9H1hCs5QXw3WF
 </details>
   
 <sumary>
