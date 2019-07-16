@@ -1,15 +1,15 @@
 {
   "name": "cosmos.public.dappnode.eth",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "upstreamVersion": "v0.34.7",
-  "shortDescription":"Cosmos Network fullnode",
+  "shortDescription": "Cosmos Network fullnode",
   "description": "Cosmos Network fullnode and Lunie web Wallet. Cosmos is an ecosystem of blockchains that can scale and interoperate with each other. It is powered by BFT consensus algorithms called Tendermint, securized by DPoS or Delegated Proof of Stake",
   "avatar": "/ipfs/QmT1BjXYwmLh9FmeT8DUywWhx2aDctMCZLLPcWqXLz5vc5",
   "type": "service",
   "image": {
-    "path": "cosmos.public.dappnode.eth_0.0.3.tar.xz",
-    "hash": "/ipfs/QmRwy5b4qdsW9N5j4aATr144r3Cp45TZJXWCpeb7mpPDiw",
-    "size": 42591812,
+    "path": "",
+    "hash": "",
+    "size": "",
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
@@ -19,10 +19,10 @@
     ]
   },
   "keywords": [
-      "DAppNode",
-      "Wallet",
-      "Luinie",
-      "Cosmos"
+    "DAppNode",
+    "Wallet",
+    "Luinie",
+    "Cosmos"
   ],
   "disclaimer": {
     "message": "This software is experimental, presented 'as is' and inherently carries risks. By installing it, you acknowledge that DAppNode Association has done its best to mitigate these risks and accept to waive any liability or responsibility for DAppNode in case of any shortage, discrepancy, damage, loss or destruction of any digital asset managed within this DAppNode package.\n\nThis package stores private keys, which will be stored in your DAppNode. Neither DAppNode Association nor the developers of this software can have access to your private key, nor help you recover it if you lose it. \n\nYou are solely responsible for keeping your private keys and password safe and to perform secure backups, as well as to restrict access to your computer and other equipment. To the extent permitted by applicable law, you agree to be responsible for all activities that have been conducted from your account. You must take all necessary steps to ensure that your private key, password, and recovery phrase remain confidential and secured."
