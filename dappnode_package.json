@@ -3,13 +3,13 @@
   "version": "0.1.2",
   "upstreamVersion": "v0.38.3",
   "shortDescription": "Cosmos Network fullnode",
-  "description": "Cosmos Network fullnode and Lunie web Wallet. Cosmos is an ecosystem of blockchains that can scale and interoperate with each other. It is powered by BFT consensus algorithms called Tendermint, securized by DPoS or Delegated Proof of Stake",
+  "description": "Cosmos Network fullnode. Cosmos is an ecosystem of blockchains that can scale and interoperate with each other. It is powered by BFT consensus algorithms called Tendermint, securized by DPoS or Delegated Proof of Stake",
   "avatar": "/ipfs/QmT1BjXYwmLh9FmeT8DUywWhx2aDctMCZLLPcWqXLz5vc5",
   "type": "service",
   "image": {
-    "path": "",
-    "hash": "",
-    "size": "",
+    "path": "cosmos.public.dappnode.eth_0.1.2.tar.xz",
+    "hash": "/ipfs/QmaE46UbhxxWEAsNZzZfCjrShSBX6yjrktpsC39r48Ffgc",
+    "size": 42575176,
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
