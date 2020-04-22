@@ -6,18 +6,18 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/espadrine.svg?style=social&label=Follow)](https://twitter.com/dappnode)
 
 
-<h1 align="center"> <a href="https://github.com/cosmos/gaia/blob/master/docs/join-mainnet.md">Cosmos Network fullnode</a> and <a href="https://github.com/luniehq/lunie">Lunie web Wallet </a> for DAppNode </h1>
+<h1 align="center"> <a href="https://github.com/cosmos/gaia/blob/master/docs/join-mainnet.md">Cosmos Network fullnode</a> for DAppNode </h1>
 
 [DAppNode](https://github.com/dappnode/DAppNode) is a web application and also the name of the [hardware](https://shop.dappnode.io) of an amazing project.
 Its goal is to make it extremely easy to install and run blockchain applications, full nodes and help to decentralice the nodes.
 
 What we have develop here is the DAppNode package that inclues a complete Cosmos Full Node
 and its official web wallet, Lunie.
-With this package you can have your own Cosmos full node and host your own clone of Lunie right at home.
+With this package you can have your own Cosmos full node at home.
 
 > The build process of the package is based on [dappnode-sdk](https://github.com/dappnode/DAppNodeSDK)
 
-> Latest version of the package (**0.1.1**) maintained by [La ColmenaSvQ](https://github.com/Colm3na)
+> Latest version of the package (**0.1.2**) maintained by [La ColmenaSvQ](https://github.com/Colm3na)
 
 > [Manifest.](dappnode_package.json)
 
@@ -51,7 +51,7 @@ http://my.dappnode/#/system/add-ipfs-peer/%2Fdns4%2F06f904705c1cde31.dyndns.dapp
 
 ## Getting Started
 
-With these instructions you can install a Cosmos node in DAppNode and use [Lunie](https://github.com/luniehq/lunie) with [Ledger.](https://www.ledger.com)
+With these instructions you can install a Cosmos node in DAppNode
 
 ### Prerequisites
 
