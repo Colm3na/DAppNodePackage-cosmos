@@ -23,22 +23,22 @@ RUN git clone -b $GAIA_VERSION https://github.com/cosmos/gaia && \
     cd gaia && \
     make install
 
-## Generating certificates
-#FROM alpine:edge as certificates
-#
-#RUN apk add --no-cache openssl 
-#
-#WORKDIR /opt/ssl
-#
-#RUN PASSWORD=$(echo $(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 20)) && \
-#    openssl genrsa -des3 -passout pass:${PASSWORD} -out server.pass.key 2048 && \
-#    openssl rsa -passin pass:${PASSWORD} -in server.pass.key -out server.key && \
-#    rm server.pass.key && \
-#    openssl req -new -key server.key -out server.csr -subj "/C=DE/ST=Decentraland/L=Decentraland/O=cosmos.public.dappnode/OU=cosmos.public.dappnode/CN=cosmos.public.dappnode" && \
-#    openssl x509 -req -sha256 -days 300065 -in server.csr -signkey server.key -out server.crt
-#
-## Lunie builder image
-#FROM alpine:edge as lunie-build
+# Generating certificates
+FROM alpine:edge as certificates
+
+RUN apk add --no-cache openssl 
+
+WORKDIR /opt/ssl
+
+RUN PASSWORD=$(echo $(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' < /dev/urandom | head -c 20)) && \
+    openssl genrsa -des3 -passout pass:${PASSWORD} -out server.pass.key 2048 && \
+    openssl rsa -passin pass:${PASSWORD} -in server.pass.key -out server.key && \
+    rm server.pass.key && \
+    openssl req -new -key server.key -out server.csr -subj "/C=DE/ST=Decentraland/L=Decentraland/O=cosmos.public.dappnode/OU=cosmos.public.dappnode/CN=cosmos.public.dappnode" && \
+    openssl x509 -req -sha256 -days 300065 -in server.csr -signkey server.key -out server.crt
+
+## Wallet builder image
+#FROM alpine:edge as wallet-build
 #
 ## Install deps
 #RUN apk add --no-cache ca-certificates bash git nodejs nodejs-npm yarn python make g++ openssl
@@ -78,7 +78,7 @@ WORKDIR /usr/src/app
 # Copy over binaries from the build
 COPY --from=cosmos-build /go/bin/gaiad /go/bin/gaiacli /usr/bin/
 
-#COPY --from=certificates /opt/ssl/server.key /opt/ssl/server.crt /etc/nginx/certs/
+COPY --from=certificates /opt/ssl/server.key /opt/ssl/server.crt /etc/nginx/certs/
 
 RUN mkdir -p /root/.gaiad/config
 
