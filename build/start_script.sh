@@ -13,4 +13,4 @@ nginx > /dev/null 2>&1 &
 /bin/sh /usr/bin/start_rest.sh > /dev/null 2>&1 &
 
 # Start the tendermint node
-gaiad start
+gaiad start --pruning=everything
