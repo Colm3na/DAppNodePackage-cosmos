@@ -9,6 +9,9 @@ fi
 # Start the web server
 nginx > /dev/null 2>&1 & 
 
+# Configure rpc
+gaiacli config node localhost:26657 &
+
 # Start the rest server
 /bin/sh /usr/bin/start_rest.sh > /dev/null 2>&1 &
 
