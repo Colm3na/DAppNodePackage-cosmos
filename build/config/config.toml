@@ -1,6 +1,11 @@
 # This is a TOML config file.
 # For more information, see https://github.com/toml-lang/toml
 
+# NOTE: Any path below can be absolute (e.g. "/var/myawesomeapp/data") or
+# relative to the home directory (e.g. "data"). The home directory is
+# "$HOME/.tendermint" by default, but could be changed via $TMHOME env variable
+# or --home cmd flag.
+
 ##### main base config options #####
 
 # TCP or UNIX socket address of the ABCI application,
@@ -8,15 +13,26 @@
 proxy_app = "tcp://127.0.0.1:26658"
 
 # A custom human readable name for this node
-moniker = "Cosmos-DAppNode"
+moniker = "DAppNode.io"
 
 # If this node is many blocks behind the tip of the chain, FastSync
 # allows them to catchup quickly by downloading blocks in parallel
 # and verifying their commits
 fast_sync = true
 
-# Database backend: leveldb | memdb | cleveldb
-db_backend = "leveldb"
+# Database backend: goleveldb | cleveldb | boltdb
+# * goleveldb (github.com/syndtr/goleveldb - most popular implementation)
+#   - pure go
+#   - stable
+# * cleveldb (uses levigo wrapper)
+#   - fast
+#   - requires gcc
+#   - use cleveldb build tag (go build -tags cleveldb)
+# * boltdb (uses etcd's fork of bolt - github.com/etcd-io/bbolt)
+#   - EXPERIMENTAL
+#   - may be faster is some use-cases (random reads - indexer)
+#   - use boltdb build tag (go build -tags boltdb)
+db_backend = "goleveldb"
 
 # Database directory
 db_dir = "data"
@@ -61,7 +77,7 @@ filter_peers = false
 [rpc]
 
 # TCP or UNIX socket address for the RPC server to listen on
-laddr = "tcp://0.0.0.0:9443"
+laddr = "tcp://0.0.0.0:26657"
 
 # A list of origins a cross-domain request can be executed from
 # Default value '[]' disables cors support
@@ -115,16 +131,26 @@ max_subscriptions_per_client = 5
 # See https://github.com/tendermint/tendermint/issues/3435
 timeout_broadcast_tx_commit = "10s"
 
-# The name of a file containing certificate that is used to create the HTTPS server.
+# Maximum size of request body, in bytes
+max_body_bytes = 1000000
+
+# Maximum size of request header, in bytes
+max_header_bytes = 1048576
+
+# The path to a file containing certificate that is used to create the HTTPS server.
+# Migth be either absolute path or path related to tendermint's config directory.
 # If the certificate is signed by a certificate authority,
 # the certFile should be the concatenation of the server's certificate, any intermediates,
 # and the CA's certificate.
-# NOTE: both tls_cert_file and tls_key_file must be present for Tendermint to create HTTPS server. Otherwise, HTTP server is run.
-#tls_cert_file = "cert.pem"
+# NOTE: both tls_cert_file and tls_key_file must be present for Tendermint to create HTTPS server.
+# Otherwise, HTTP server is run.
+tls_cert_file = ""
 
-# The name of a file containing matching private key that is used to create the HTTPS server.
-# NOTE: both tls_cert_file and tls_key_file must be present for Tendermint to create HTTPS server. Otherwise, HTTP server is run.
-#tls_key_file = "key.pem"
+# The path to a file containing matching private key that is used to create the HTTPS server.
+# Migth be either absolute path or path related to tendermint's config directory.
+# NOTE: both tls_cert_file and tls_key_file must be present for Tendermint to create HTTPS server.
+# Otherwise, HTTP server is run.
+tls_key_file = ""
 
 ##### peer to peer configuration options #####
 [p2p]
@@ -139,14 +165,13 @@ laddr = "tcp://0.0.0.0:26656"
 external_address = ""
 
 # Comma separated list of seed nodes to connect to
-#seeds = ""
 seeds = "ba3bacc714817218562f743178228f23678b2873@public-seed-node.cosmoshub.certus.one:26656, \
 89e4b72625c0a13d6f62e3cd9d40bfc444cbfa77@34.65.6.52:26656, \
 3028c6ee9be21f0d34be3e97a59b093e15ec0658@91.205.173.168:26656, \
 1d741cfee5d78c5caf0b5a5b513e7793d50ea26f@goku.forbole.com:26656"
 
 # Comma separated list of nodes to keep persistent connections to
-persistent_peers = ""
+persistent_peers = "7f6ac6aad6bfc8d265870ba5e6da34cc09ad8a2e@46.4.17.85:26656"
 
 # UPNP port forwarding
 upnp = false
@@ -212,6 +237,18 @@ max_txs_bytes = 1073741824
 
 # Size of the cache (used to filter transactions we saw earlier) in transactions
 cache_size = 10000
+
+# Maximum size of a single transaction.
+# NOTE: the max size of a tx transmitted over the network is {max_tx_bytes} + {amino overhead}.
+max_tx_bytes = 1048576
+
+##### fast sync configuration options #####
+[fastsync]
+
+# Fast Sync version to use:
+#   1) "v0" (default) - the legacy fast sync implementation
+#   2) "v1" - refactor of v0 version for better testability
+version = "v0"
 
 ##### consensus configuration options #####
 [consensus]
