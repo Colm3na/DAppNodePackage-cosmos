@@ -8,8 +8,8 @@
   "type": "service",
   "image": {
     "path": "cosmos.public.dappnode.eth_0.1.2.tar.xz",
-    "hash": "/ipfs/Qmbp16NXsXjWFgNdFS58MZz1d552KRdKS1E8r3prMDm3Ms",
-    "size": 42573632,
+    "hash": "/ipfs/QmX4xJn5kkj8yrAAfW8cc2J6iCMDUhMsB6snS6MseyRBTX",
+    "size": 42574380,
     "restart": "always",
     "volumes": [
       "cosmos:/root/.gaiad"
