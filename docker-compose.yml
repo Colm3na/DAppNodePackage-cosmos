@@ -6,5 +6,8 @@ services:
     volumes:
       - 'cosmos:/root/.gaiad'
     tty: true
+    restart: always
+    ports:
+      - 26656:26656
 volumes:
   cosmos: {}
