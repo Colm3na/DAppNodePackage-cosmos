@@ -1,6 +1,6 @@
 {
   "name": "cosmos.public.dappnode.eth",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "upstreamVersion": "v2.0.8",
   "shortDescription": "Cosmos Network fullnode",
   "description": "Cosmos Network fullnode. Cosmos is an ecosystem of blockchains that can scale and interoperate with each other. It is powered by BFT consensus algorithms called Tendermint, securized by DPoS or Delegated Proof of Stake",
@@ -23,7 +23,7 @@
     "Blockchain"
   ],
   "links": {
-    "Big Dipper": "http://my.dappnode/#/installer/ big-dipper.public.dappnode.eth",
+    "Big Dipper": "http://my.dappnode/#/installer/big-dipper.public.dappnode.eth",
     "LCD": "http://cosmos.public.dappnode:1317/node_info",
     "RPC": "http://cosmos.public.dappnode:26657"
   },
