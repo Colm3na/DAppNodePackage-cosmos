@@ -1,6 +1,6 @@
 {
   "name": "cosmos.public.dappnode.eth",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "upstreamVersion": "v2.0.8",
   "shortDescription": "Cosmos Network fullnode",
   "description": "Cosmos Network fullnode. Cosmos is an ecosystem of blockchains that can scale and interoperate with each other. It is powered by BFT consensus algorithms called Tendermint, securized by DPoS or Delegated Proof of Stake",
