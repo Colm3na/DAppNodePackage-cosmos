@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   cosmos.public.dappnode.eth:
-    image: 'cosmos.public.dappnode.eth:0.1.3'
+    image: 'cosmos.public.dappnode.eth:0.1.4'
     build: ./build
     volumes:
       - 'cosmos:/root/.gaiad'

@@ -5,5 +5,13 @@
     "uploadedTo": {
       "dappnode": "Fri, 15 May 2020 10:45:07 GMT"
     }
+  },
+  "0.1.3": {
+    "hash": "/ipfs/QmViqteVNZWGVYxscCKPEBPf22WwbwjvzJm4Y2fY6eMvva",
+    "type": "directory",
+    "uploadedTo": {
+      "remote": "Sun, 17 May 2020 12:02:00 GMT"
+    },
+    "link": "http://my.dappnode/#/sdk/publish/r=cosmos.public.dappnode.eth&v=0.1.3&h=%2Fipfs%2FQmViqteVNZWGVYxscCKPEBPf22WwbwjvzJm4Y2fY6eMvva"
   }
 }
