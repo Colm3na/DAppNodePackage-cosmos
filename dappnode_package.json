@@ -14,7 +14,7 @@
   "disclaimer": {
     "message": "This software is experimental, presented 'as is' and inherently carries risks. By installing it, you acknowledge that DAppNode Association has done its best to mitigate these risks and accept to waive any liability or responsibility for DAppNode in case of any shortage, discrepancy, damage, loss or destruction of any digital asset managed within this DAppNode package.\n\nThis package stores private keys, which will be stored in your DAppNode. Neither DAppNode Association nor the developers of this software can have access to your private key, nor help you recover it if you lose it. \n\nYou are solely responsible for keeping your private keys and password safe and to perform secure backups, as well as to restrict access to your computer and other equipment. To the extent permitted by applicable law, you agree to be responsible for all activities that have been conducted from your account. You must take all necessary steps to ensure that your private key, password, and recovery phrase remain confidential and secured."
   },
-  "author": "La ColmenaSVQ (https://github.com/Colm3na)",
+  "author": "ColmenaLabs_SVQ (https://github.com/Colm3na)",
   "contributors": [
     "DerFredy (https://github.com/derfredy)",
     "Wimel (https://github.com/wimel)"
@@ -23,7 +23,7 @@
     "Blockchain"
   ],
   "links": {
-    "Big Dipper": "http://my.dappnode/#/installer/ big-dipper.public.dappnode.eth",
+    "Big Dipper": "http://my.dappnode/#/installer/big-dipper.public.dappnode.eth",
     "LCD": "http://cosmos.public.dappnode:1317/node_info",
     "RPC": "http://cosmos.public.dappnode:26657"
   },
